@@ -4,7 +4,6 @@
   "description": "Server-side Rendering React from Scratch!",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "yarn add --dev",
     "start": "yarn build && node index.js",
     "build": "webpack --config webpack.config.js"
   },
