@@ -31,7 +31,17 @@ Builds the app for production to the `build` folder.<br />
 - Function base component with react hooks like useState, useEffect etc
 
 
-##unit test case coverage screenshot
-![Alt text](/screenshots/test.png?raw=true "Unit Test Case Coverage")
+## unit test case coverage screenshot
+![Alt text](screenshots/test.PNG?raw=true "Unit Test Case Coverage")
+
+## App responsive screenshots
+Desktop
+![Alt text](screenshots/desktop.PNG?raw=true "Desktop")
+iPad Pro
+![Alt text](screenshots/iPad.PNG?raw=true "iPad")
+Tablet
+![Alt text](screenshots/tablet-small.PNG?raw=true "Tablet")
+Mobile
+![Alt text](screenshots/mobile.PNG?raw=true "Mobile")
 
 🥳
