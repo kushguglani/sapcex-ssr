@@ -5,26 +5,58 @@
   "main": "index.js",
   "scripts": {
     "start": "yarn build && node index.js",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "test": "env-cmd -f .env.test react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:coverage": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"unit.test.js\" --verbose"
   },
   "author": "Rohit kumar",
   "license": "MIT",
   "dependencies": {
     "@babel/register": "^7.8.6",
+    "axios": "^0.20.0",
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-helmet": "^6.1.0",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx,js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/test.{ts,tsx,js,jsx}",
+      "!**/src/bundle.js",
+      "!**/src/client.js",
+      "!**/src/server.js",
+      "!**/src/template.js",
+      "!**/src/redux/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "babel-loader": "^8.0.6",
-    "webpack": "^4.42.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.11"
   }
 }

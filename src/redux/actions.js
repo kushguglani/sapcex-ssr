@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 export const REQUEST_APPS = 'REQUEST_APPS'
 export const RECEIVE_APPS = 'RECEIVE_APPS'
 
@@ -16,28 +16,21 @@ function receiveApps(json) {
   }
 }
 
-function fetchApps() {
+function fetchApps(data) {
   return dispatch => {
     dispatch(requestApps())
-    return fetch(`assets/data.json`)
-      .then(response => response.json())
-      .then(json => dispatch(receiveApps(json)))
+    return axios
+      .get(`https://api.spaceXdata.com/v3/launches?limit=100&launch_success=${data.successfullLaunch}&land_success=${data.successfullLanding}&launch_year=${data.selectedYear}`
+      )
+
+      .then((response) => {
+        dispatch(receiveApps(response.data))
+      });
   }
 }
 
-function shouldFetchApps(state) {
-  const apps = state.apps
-  if (apps.length==0) {
-    return true
-  } else if (state.isFetching) {
-    return false
-  }
-}
-
-export function fetchAppsIfNeeded() {
-  return (dispatch, getState) => {
-    if (shouldFetchApps(getState())) {
-      return dispatch(fetchApps())
-    }
+export function fetchAppsIfNeeded(data) {
+  return dispatch=>{
+    dispatch(fetchApps(data))
   }
 }

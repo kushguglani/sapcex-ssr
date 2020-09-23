@@ -1,35 +1,58 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
+
 import { fetchAppsIfNeeded } from '../redux/actions'
+import Head from './Head';
+import Spinner from './spinner/Spinner';
+import Header from './header/Header';
+import Filter from './filter/FilterContainer';
+import SpaceBar from './spaceBar/SpaceBarContainer';
+import Footer from './footer/Footer';
 
-import Card from './card'
-class App extends Component {
 
-  componentDidMount() {
-    const { dispatch } = this.props
-    dispatch(fetchAppsIfNeeded())
+const App = (props) => {
+  const { isFetching, apps } = props;
+  const [displaySpinner, setDisplaySpinner] = useState(isFetching);
+  const [filter, setFilter] = useState({
+    selectedYear: '',
+    successfullLaunch: '',
+    successfullLanding: '',
+  });
+  useEffect(()=>{setDisplaySpinner(isFetching)},[isFetching])
+  const fetchSpaceX = (filter)=>{
+    props.fetchAppsIfNeeded(filter);
   }
+  return (
+    <div className="app">
+      <Spinner display={displaySpinner} />
+      <Head />
+      <Header />
+      <div className="container">
+        <div className="col-3">
+          <Filter
+            filter={filter}
+            setFilter={setFilter}
+            fetchAppsIfNeeded={fetchSpaceX}
+          />
+        </div>
+        <div className="col-9">
+          <SpaceBar spacex={apps} />
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
-
-  render() {
-    const { isFetching, apps } = this.props
-    const totalapps = apps.length;
-
-    return (
-       <>
-         {isFetching && totalapps === 0 && <h2>Loading...</h2>}
-         {!isFetching && totalapps === 0 && <h2>Empty.</h2>}
-         <Card apps={apps} totalapps={totalapps} />
-       </>
-    );
-  }
-}
- 
 function mapStateToProps({ isFetching, apps }) {
   return {
     isFetching,
     apps
   }
 }
- 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = dispatch => ({
+  fetchAppsIfNeeded: (data) => dispatch(fetchAppsIfNeeded(data)),
+});
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

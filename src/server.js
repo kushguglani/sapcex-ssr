@@ -9,7 +9,6 @@ import App from './components/app'
 module.exports = function render(initialState) {
   // Configure the store with the initial state provided
   const store = configureStore(initialState)
-
   // render the App store static markup ins content variable
   let content = renderToString(
     <Provider store={store} >

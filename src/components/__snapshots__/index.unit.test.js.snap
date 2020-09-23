@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Module matches FilterContainer snapshot 1`] = `
+<div>
+  <div
+    class="box-container"
+  >
+    <h3
+      class="filter-heading"
+    >
+      Filters
+    </h3>
+    <div>
+      <p
+        class="center-text filter-text"
+      >
+        Luanch Year
+      </p>
+      <div
+        class="btn-container"
+      >
+        <button
+          class=""
+        >
+          2006
+        </button>
+        <button
+          class=""
+        >
+          2007
+        </button>
+        <button
+          class=""
+        >
+          2008
+        </button>
+        <button
+          class=""
+        >
+          2009
+        </button>
+        <button
+          class=""
+        >
+          2010
+        </button>
+        <button
+          class=""
+        >
+          2011
+        </button>
+        <button
+          class=""
+        >
+          2012
+        </button>
+        <button
+          class=""
+        >
+          2013
+        </button>
+        <button
+          class=""
+        >
+          2014
+        </button>
+        <button
+          class=""
+        >
+          2015
+        </button>
+        <button
+          class=""
+        >
+          2016
+        </button>
+        <button
+          class=""
+        >
+          2017
+        </button>
+        <button
+          class=""
+        >
+          2018
+        </button>
+        <button
+          class=""
+        >
+          2019
+        </button>
+        <button
+          class=""
+        >
+          2020
+        </button>
+      </div>
+    </div>
+    <div
+      class="filter-box"
+    >
+      <p
+        class="center-text filter-text"
+      >
+        Successfull Launch
+      </p>
+      <button
+        class=""
+      >
+        True
+      </button>
+      <button
+        class=""
+      >
+        False
+      </button>
+    </div>
+    <div
+      class="filter-box"
+    >
+      <p
+        class="center-text filter-text"
+      >
+        Successfull Landing
+      </p>
+      <button
+        class=""
+      >
+        True
+      </button>
+      <button
+        class=""
+      >
+        False
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Module matches FooterModule snapshot 1`] = `
+<div>
+  <h4
+    class="center-text"
+  >
+    Developed by: 
+    <em>
+      Kush Guglani
+    </em>
+  </h4>
+</div>
+`;
+
+exports[`Module matches Head snapshot 1`] = `<div />`;
+
+exports[`Module matches SpaceBarContainer snapshot 1`] = `
+<div>
+  <div
+    class="space-container"
+  >
+    No SpaceX Found
+  </div>
+</div>
+`;
+
+exports[`Module matches header snapshot 1`] = `
+<div>
+  <h3
+    class="header"
+  >
+    SpaceX Launch Programs
+  </h3>
+</div>
+`;

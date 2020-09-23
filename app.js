@@ -3,6 +3,7 @@ import path from 'path'
 import template from './src/template'
 import ssr from './src/server'
 import data from './assets/data.json'
+import axios from 'axios'
 
 const app = express()
 
@@ -16,16 +17,25 @@ app.disable('x-powered-by');
 app.listen(process.env.PORT || 3000);
 
 let initialState = {
-  isFetching: false,
-  apps: data
+  isFetching: true,
+  apps: ""
 }
 
 // server rendered home page
 app.get('/', (req, res) => {
-  const { preloadedState, content}  = ssr(initialState)
-  const response = template("Server Rendered Page", preloadedState, content)
-  res.setHeader('Cache-Control', 'assets, max-age=604800')
-  res.send(response);
+  axios.get('https://api.spaceXdata.com/v3/launches?limit=100').then(spaceX => {
+    const { preloadedState, content } = ssr(
+      {
+        ...initialState,
+        isFetching: false,
+        apps: spaceX.data
+      }
+    )
+    const response = template("Server Rendered Page", preloadedState, content)
+    res.setHeader('Cache-Control', 'assets, max-age=604800')
+    res.send(response);
+  })
+
 });
 
 // Pure client side rendered page
