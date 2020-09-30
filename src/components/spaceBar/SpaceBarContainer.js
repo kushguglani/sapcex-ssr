@@ -34,7 +34,7 @@ const SpaceBarContainer = ({ spacex }) => {
     setSpaceData(data);
   }, [spacex]);
 
-  return <div className="space-container">{spaceXdata}</div>;
+  return <main className="space-container">{spaceXdata}</main>;
 };
 
 export default SpaceBarContainer;

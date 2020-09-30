@@ -5,7 +5,7 @@ import IsSuccesfulFilter from './IsSuccesfulFilter';
 
 function filterContainer({ filter, setFilter,fetchAppsIfNeeded }) {
   return (
-    <div className="box-container">
+    <aside className="box-container">
       <h3 className="filter-heading">Filters</h3>
       <LaunchYear
         filter={filter}
@@ -29,7 +29,7 @@ function filterContainer({ filter, setFilter,fetchAppsIfNeeded }) {
         type="successfullLanding"
         fetchAppsIfNeeded={fetchAppsIfNeeded}
       />
-    </div>
+    </aside>
   );
 }
 export default filterContainer;

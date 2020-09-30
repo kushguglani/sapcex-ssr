@@ -1,0 +1,31 @@
+.filter-text{
+    width: 60%;
+    padding-bottom: 3px;
+    margin: 2px auto 12px auto;
+    border-bottom: 2px solid $white-shadow;
+    font-size: 13px;
+    font-weight: bold;
+}
+.filter-heading{
+    margin: 0px;
+    font-size: 16px;
+}
+.btn-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-bottom: 16px;
+}
+button{
+    outline: none;
+    background-color: $button-color;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    width: 35%;
+    margin: 5px 5%;
+    cursor: pointer;
+}
+.filter-box{
+    margin-bottom: 16px;
+}

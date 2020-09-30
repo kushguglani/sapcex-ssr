@@ -12,8 +12,10 @@ export default function SpaceBar(props) {
   } = props;
   return (
     <div className="box-container space-card" key={flight_number}>
-      <img src={img} alt={rocket_name + ' image'} />
-      <p className="rocket-name">{rocket_name}</p>
+      <figure>
+      <img aria-label={rocket_name+ ' image'} src={img} alt={rocket_name + ' image'} />
+      <figcaption className="rocket-name">{rocket_name}</figcaption>
+      </figure>
       <p>Mission Ids:</p>
       <ul>
         {mission_id.length > 0
