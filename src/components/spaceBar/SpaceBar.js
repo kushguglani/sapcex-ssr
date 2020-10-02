@@ -29,7 +29,7 @@ export default function SpaceBar(props) {
         Successfull Launch: <span>{'' + launch_success} </span>
       </p>
       <p>
-        Successfull Launch: <span>{'' + land_success} </span>
+        Successfull Landing: <span>{'' + land_success} </span>
       </p>
     </div>
   );
