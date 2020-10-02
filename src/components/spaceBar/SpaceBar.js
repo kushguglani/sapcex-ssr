@@ -23,13 +23,13 @@ export default function SpaceBar(props) {
           : 'No missions'}
       </ul>
       <p>
-        Luanch Year:<span> {launch_year}</span>
+        Launch Year:<span> {launch_year}</span>
       </p>
       <p>
-        Successfull Luanch: <span>{'' + launch_success} </span>
+        Successfull Launch: <span>{'' + launch_success} </span>
       </p>
       <p>
-        Successfull Luanch: <span>{'' + land_success} </span>
+        Successfull Launch: <span>{'' + land_success} </span>
       </p>
     </div>
   );

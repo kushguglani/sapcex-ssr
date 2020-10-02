@@ -10,7 +10,7 @@ describe('LaunchYear', () => {
       successfullLanding: '',
     };
     render(<LaunchYear filter={filter} text="Launch Year" />);
-    const launchText = screen.getByText('Luanch Year');
+    const launchText = screen.getByText('Launch Year');
     expect(launchText).toBeInTheDocument();
   });
   it('toogle filter launch value on click', () => {

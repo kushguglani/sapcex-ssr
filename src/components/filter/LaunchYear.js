@@ -22,7 +22,7 @@ export default function launchYear(props) {
   ));
   return (
     <div>
-      <p className="center-text filter-text">Luanch Year</p>
+      <p className="center-text filter-text">Launch Year</p>
       <div className="btn-container">{yearList}</div>
     </div>
   );
